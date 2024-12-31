@@ -1,10 +1,7 @@
 import os
 import logging
 from typing import List, Tuple
-from models.CochlSense.load import cochlSense
-from models.SpeechBrain.load import speechMood
-from models.whispers.load import whisper_result
-from models.CochlMood.load import predict_sound_mood
+from models.whisperx.load import whisper_result
 from tools.utils import format_time, emotion_to_text
 
 logging.basicConfig(level=logging.ERROR)
