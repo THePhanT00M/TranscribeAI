@@ -7,12 +7,10 @@ import numpy as np
 
 import tools.utils as pt
 import tools.cli as cli
-from collections import defaultdict
-from models.CochlSense.load import cochlSense
 from tools.utils import extract_audio
 from tools.utils import transform
 from tools.cli import cli
-from models.whispers.load import whisper_result
+from models.whisperx.load import whisper_result
 from tools.transcript import generate_subtitles
 
 from PIL import Image, ImageDraw, ImageFont

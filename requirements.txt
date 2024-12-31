@@ -6,3 +6,5 @@ transformers
 pandas
 setuptools>=65
 nltk
+pydub
+opencv-python
