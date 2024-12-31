@@ -4,8 +4,33 @@ import subprocess
 import pandas as pd
 import ast
 import logging
+import json
+import os
 
 logging.basicConfig(level=logging.ERROR)
+
+def load_json(filepath):
+    with open(filepath, 'r', encoding='utf-8') as file:
+        return json.load(file)
+
+
+def save_json(input_file, whispers, tag='', output_dir='./dataset/json'):
+    # 출력 파일의 디렉토리를 생성
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+
+    # 입력 파일명에서 확장자 제거하고, 출력 파일명 생성
+    input_filename = os.path.splitext(os.path.basename(input_file))[0]
+
+    if tag:
+        filename = tag + '_' + input_filename + '.json'
+    else:
+        filename = input_filename + '.json'
+
+    output_file = os.path.join(output_dir, filename)
+
+    with open(output_file, 'w') as f:
+        json.dump(whispers, f)
 
 def split_audio(file_path, segment_length_ms, output_folder):
     """
